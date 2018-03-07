@@ -1,3 +1,4 @@
+
 \documentclass[utf8, whale, hyperref={unicode}]{beamer}
 
 \mode<presentation>
@@ -12,11 +13,11 @@
     \end{beamercolorbox}%
     \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
     \usebeamerfont{title in head/foot}\insertshorttitle \hfill p.
-	\insertpagenumber\enspace iš \insertdocumentendpage\enspace
+	\insertpagenumber\enspace i? \insertdocumentendpage\enspace
     \end{beamercolorbox}}%
   \vskip0pt%
 }
-  
+
   \definecolor{myBlue}{RGB}{0,170,45}
 \definecolor{mygreen}{cmyk}{0.61,0.01,0.1,0.5}
 \setbeamertemplate{sidebar canvas right}[vertical shading][top=palette quaternary.bg,bottom=mygreen]
@@ -26,9 +27,9 @@
 bg= blue!10}
 \setbeamercolor*{block body example}{fg= blue,
 bg= blue!5}
-  
+
   \setbeamercolor{title}{fg=black}
-%    
+%
 %\makeatletter
 %\setbeamertemplate
 %\makeatother
@@ -86,7 +87,7 @@ bg= blue!5}
 
 \usepackage[lithuanian, english]{babel}
 \usepackage[L7x]{fontenc}
-\usepackage{movie15} 
+\usepackage{movie15}
 \usepackage{ucs}
 \usepackage{lmodern}
 \usepackage{amsmath}
@@ -125,7 +126,7 @@ bg= blue!5}
 \bibliographystyle{elsarticle-num}
 
 
-\newtheorem{defi}{\color{white}Apibrėžimas:}
+\newtheorem{defi}{\color{white}Apibr??imas:}
 \newtheorem{lyg}{\color{white}}
 
 \newcommand{\bb}{\bm{\beta}}
@@ -138,13 +139,13 @@ bg= blue!5}
   \setlength{\textwidth}{#1}
   \begin{actionenv}#3%
     \def\insertblocktitle{#2}%
-    \par%    
+    \par%
     \usebeamertemplate{block begin}%
     }
   {\par%
     \usebeamertemplate{block end}%
   \end{actionenv}}
- 
+
 
 \usepackage{eso-pic}
   \usepackage{tikz}
@@ -155,7 +156,7 @@ bg= blue!5}
 \normalsize
 \title[CNN, RNN and applications]{ {CNN, RNN and applications}}
 
-\author[P. Daniušis, A. Indriulionis]{P. Daniušis, A. Indriulionis}
+\author[P. Daniu\v{s}is, A. Indriulionis]{P. Daniu\v{s}is, A. Indriulionis}
 \medskip
 
 
@@ -166,11 +167,11 @@ bg= blue!5}
     \titlepage
 \end{frame}
 
- 
+
 \begin{frame}
 	\frametitle{Presentation plan}
 	\begin{itemize}
-	\item Konvoliuciniai NN ir pvz. 
+	\item Konvoliuciniai NN ir pvz.
 	\item Rekurentiniai NN ir pvz.
 	\item Taikymas: cross modal distillation.
 	\item Taikymas: image captioning.
@@ -180,8 +181,148 @@ bg= blue!5}
 
 
 
+\begin{frame}
+	\frametitle{Research criteria}
+Demo filmukas \href{https://www.youtube.com/watch?time_continue=40&v=R2mC-NUAmMk}{\beamergotobutton{Link}}
+
+
+	\begin{itemize}
+	\item Konvoliuciniai NN ir pvz.
+	\item Rekurentiniai NN ir pvz.
+	\item Taikymas: cross modal distillation.
+	\href{https://github.com/xiaolonw/fast-rcnn-distillation}{\beamergotobutton{Link}}
+	\item Taikymas: image captioning.
+	\href{https://iq.intel.com/augmented-reality-can-help-blind-see/}{\beamergotobutton{Link}}
+	\item Taikymas: object detection.
+	\href{https://www.veritone.com/insights/object-recognition-technology-help-blind-people-navigate/}		{\beamergotobutton{Link}}
+	\end{itemize}
+\end{frame}	
+
+
+\begin{frame}
+	\frametitle{What criteria should be met for SMART prototype?}
+
+	\begin{itemize}
+	\item Type of usage: Indoor/Outdoor recognition
+	\item Type of sensors
+	\item Accuracy
+	\item Costs
+	\item Prototype limitations
+	\item Working regime: Day/Night
+	\item Object detection range: Min/Max
+	\item Objects Classification:  Static/Dynamic
+	\item Used Techniques: for Classification, Recognition, Detection, Localization
+	\item Object Detection: Real time/Static	
+	\end{itemize}
+
+\end{frame}
+
+%
+\begin{frame}
+\frametitle{Image Preprocessing to Sentence}
+  \hfil\hfil\includegraphics[width=5cm]{image/Image2Text.jpg}\newline
+  \null\hfil\hfil\makebox[5cm]{Preprocessing image to text}\newline
+  \vfil
+  \hfil\hfil\includegraphics[width=3cm]{image/Image2Sentence_Schema.jpg}\hfil\hfil
+    \includegraphics[width=3cm]{image/ImageProcessing.jpg}\newline
+  \null\hfil\hfil\makebox[5cm]{Image preprocessing logical schema}
+    \hfil\hfil\makebox[5cm]{Image preprocessing algorithm schema}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{CNN Framework and applications}
+    \begin{figure}[ht]
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{image/PracticalApplications.jpg}
+            \caption{Deep Neural Networks for practical applications}
+            \label{fig:PracApp}
+        \end{minipage}
+        \hspace{0.5cm}
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{image/CNNFramework.jpg}
+            \caption{Deep Neural Network Framework}
+            \label{fig:DNNF}
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Hardware Implementation: CPU, GPU, FPGA aspects}
+
+
+\end{frame}
+%
+%
+%%GoogLENet
+%%https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/googlenet.html
+%%Github: https://gist.github.com/joelouismarino/a2ede9ab3928f999575423b9887abd14
+%
+\begin{frame}
+\frametitle{ Deep Learning Frameworks: \href{https://developer.nvidia.com/deep-learning-frameworks}{\beamergotobutton{Link}}}
+
+	\begin{itemize}
+		\item NVCaffe \href{https://github.com/BVLC/caffe}{\beamergotobutton{Link}}
+		\item Caffe2
+		\item  Microsoft Cognitive Toolkit (CNTK)
+		\item Digits
+		\item MXNet
+		\item PyTorch	
+		\item TensorFlow
+		\item Theano
+		\item Torch
+		\item Keras
+	\end{itemize}
+\end{frame}
+
+%
+%
+%
+%%http://kelvinxu.github.io/projects/capgen.html
+%
+%
+\begin{frame}
+\frametitle{Image to Text to  Speech}
+
+
+	\begin{itemize}
+		\item CNN-based Image Feature Extractor
+		\item LSTM-based Sentence Generator (LSTM learning algorithm using Simultaneous
+Perturbation Stochastic Approximation (SPSA))
+		\item RNN-based Sentence Generator
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Evaluation metrics}
+	\begin{itemize}
+		\item BLEU (Bilingual Evaluation Understudy)
+		\item METEOR (Metric for Evaluation of Translation with Explicit Ordering)
+		\item CIDEr (Consensus-based Image Description Evaluation)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Image, Video and Audio data sets}
+
+
+  \begin{itemize}
+  	\item COCO \href{https://github.com/nightrome/cocostuff}{\beamergotobutton{Link}}
+				\href{http://www.vision.caltech.edu/~mronchi/projects/Cocoa/}{\beamergotobutton{Link}}
+	\item ImageNet \href{http://image-net.org/download-images}{\beamergotobutton{Link}}
+	\item SUN	\href{http://vision.cs.princeton.edu/projects/2010/SUN/}{\beamergotobutton{Link}}
+    \item Google Open Images(~9M images) \href{https://github.com/openimages/dataset}{\beamergotobutton{Link}}
+	\item Youtube-8M (8M videos) \href{ https://research.google.com/youtube8m/}{\beamergotobutton{Link}}
+	\item AudioSet(2M sound clips)  \href{https://research.google.com/audioset/index.html }{\beamergotobutton{Link}}
+  \end{itemize}
+\end{frame}
 
 
 \end{document}
-
-
